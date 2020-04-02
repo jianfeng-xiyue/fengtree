@@ -94,6 +94,8 @@ int8_t BramReadDataWithCRC(uint32_t *Inbuff)
     }
     else
     {
+
+        
         /*Now often happen crc err ,and repeate 1st read is OK*/
         if(BRAM_DEBUG == g_DebugType_EU)
         {       
