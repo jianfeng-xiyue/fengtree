@@ -94,9 +94,14 @@ int8_t BramReadDataWithCRC(uint32_t *Inbuff)
     }
     else
     {
-        printf("Bram read Crc failed\n");
-        printf("TempCrcValue_U32 %08x,PackeCrcValue_U32 %08x \n",TempCrcValue_U32,PackeCrcValue_U32); 
-        return -1;
+        /*Now often happen crc err ,and repeate 1st read is OK*/
+        if(BRAM_DEBUG == g_DebugType_EU)
+        {       
+            printf("Bram read Crc failed\n");
+            printf("TempCrcValue_U32 %08x,PackeCrcValue_U32 %08x \n",TempCrcValue_U32,PackeCrcValue_U32); 
+    
+        }
+    return -1;
        
     }
     
