@@ -1,0 +1,12 @@
+#CROSS_COMPILE_PATH=/home/sdaccel/Vivado/2016.2/settings64.sh
+MODBUS_LIB =/usr/local/lib/
+CROSS_COMPILE=arm-xilinx-linux-gnueabi-
+TARGET       := Lmu_Demo_Mod
+SOURCE       := ./*.c
+$(TARGET):$(SOURCE) libxtom.a
+	$(CROSS_COMPILE)gcc $^ -o $@ -lpthread -L$(MODBUS_LIB) -lmodbus
+clean:
+	rm -rf ./*.o
+install:
+	cp ./*.o $(INSTALL_PATH)
+
