@@ -98,14 +98,12 @@ int8_t DectoBCD(uint16_t Dec,uint8_t * Bcd,uint8_t length)
 *History:
 *REV1.0.0     feng    2020/3/26  Create
 *
+add the git test
 *********************************************************************/
 uint16_t Litte2BigEnd(uint16_t Indata)
 {
 	uint16_t result = 0;
 	result = (((Indata & 0xFF) << 8 )|((Indata >> 8) & 0xFF));
-
-
-
 	return  result;
 }
 
